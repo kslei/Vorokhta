@@ -288,7 +288,7 @@ canvas {
 .book {
   position: relative;
   width: 100%;
-  padding: 0 20px;
+  padding: 0;
   /* background-color: #f0f0f0; */
 }
 
@@ -301,6 +301,18 @@ canvas {
   flex-direction: row;
   justify-content: space-between;
   background-color: #9e824e;
+  margin: 0;
+  /* &__image {
+
+    & img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      //object-fit: cover;
+    }
+  } */
 }
 
 .pages__itemsL,
@@ -322,14 +334,7 @@ canvas {
   position: absolute;
 }
 
-.pages__image {
-  /* position: relative;
-  --aspect-ratio: 3/4;
-  height: 0;
-  padding-bottom: calc(100%/(var(--aspect-ratio))); */
-}
-
-.pages__image img {
+.pages__item img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -565,7 +570,8 @@ body {
   line-height: 150%;
 }
 
-.content__flex {
+.content__flex,
+.content__flexbook {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -591,13 +597,6 @@ p {
   text-align: justify;
 }
 
-.content__flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: flex-start;
-}
-
 @media (min-width: 576px) {
   .book {
     max-width: 1000px;
@@ -619,6 +618,10 @@ p {
 }
 
 @media (min-width: 992px) {
+  .book {
+    padding: 0 20px;
+  }
+
   .wrapper {
     width: 960px;
   }
@@ -655,9 +658,47 @@ p {
     padding-bottom: 0;
     height: 300px;
   }
+
+  .content__flexbook {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
+  .pages {
+    max-width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .pages__itemsL,
+  .pages__itemsR {
+    width: 100%;
+  }
+
+  .forv,
+  .back {
+    width: 50px;
+    height: 50px;
+    rotate: 90deg;
+  }
+
+  .forv {
+    top: calc(50% + 10px);
+    right: 0;
+  }
+
+  .back {
+    top: calc(50% - 60px);
+    left: calc(100% - 50px);
+  }
+
+  .content__title {
+    margin: 0 0 10px 0;
+  }
+
   .content__text {
     line-height: 120%;
     padding-bottom: 10px;
@@ -688,19 +729,6 @@ p {
 
   .image__btn {
     --aspect-ratio: 3/2;
-  }
-
-  .forv,
-  .back {
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 575px) {
-  .content__title {
-    margin: 0 0 10px 0;
   }
 }
 
