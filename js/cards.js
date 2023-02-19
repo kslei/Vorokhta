@@ -6,7 +6,7 @@ console.log(cards);
 if (cardsDiv.getBoundingClientRect().height < 440) {
   cardsDiv.style.height = 460 +"px";
 }
-
+//Скроллим начало блока и если оно достигнуто, запускаем функцию  
 window.onscroll = function () {
   let posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   let divY = window.pageYOffset + cardsContent.getBoundingClientRect().top
