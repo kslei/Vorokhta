@@ -86,8 +86,8 @@ anchors.forEach(item => {
     let scrollBy = coordY / framesCount;
     // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
     // и дно страницы не достигнуто
-    console.log("scrollBy", scrollBy)
-    console.log("pageYOffset", window.pageYOffset) 
+    /* console.log("scrollBy", scrollBy)
+    console.log("pageYOffset", window.pageYOffset) */ 
     if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
       // то скроллим на к-во пикселей, которое соответствует одному такту
       window.scrollBy(0, scrollBy);
