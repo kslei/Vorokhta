@@ -3,6 +3,10 @@ const cardsDiv = document.querySelector('.content__cards');
 const cardsContent = document.querySelector('.cards-content')
 console.log(cards);
 
+if (cardsDiv.getBoundingClientRect().height < 440) {
+  cardsDiv.style.height = 460 +"px";
+}
+
 window.onscroll = function () {
   let posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   let divY = window.pageYOffset + cardsContent.getBoundingClientRect().top
@@ -39,8 +43,14 @@ cards.forEach(card => {
 function write (n) {
   for (let i = 0; i < cards.length; i++) {
     if (i == n) {
-      cards[i].style.zIndex = 5;
-      cards[i].style.filter = "none";
+      console.log(cards[i].style.zIndex)
+      if(cards[i].style.zIndex == 5) {
+        cards[i].style.zIndex = 2;
+        cards[i].style.filter = "grayscale(100%)";
+      } else {
+        cards[i].style.zIndex = 5;
+        cards[i].style.filter = "none";
+      }
     } else {
       cards[i].style.zIndex = 2;
       cards[i].style.filter = "grayscale(100%)";

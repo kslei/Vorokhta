@@ -480,6 +480,7 @@ canvas {
   opacity: 0;
   transition: 700ms;
   top: 0;
+  z-index: 2;
   left: 20px;
   filter: grayscale(100%);
 }
