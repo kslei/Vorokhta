@@ -7,7 +7,7 @@ window.onscroll = function () {
   let posTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   let divY = window.pageYOffset + cardsContent.getBoundingClientRect().top
   console.log(posTop - (window.pageYOffset + cardsContent.getBoundingClientRect().top))
-  if((posTop - divY) >= 0) {
+  if((posTop - divY) >= -5) {
     createCards()
   }
 }
